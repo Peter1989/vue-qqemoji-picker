@@ -1,8 +1,3 @@
-# vue-qqemoji-picker
-
-Simple Vue.js QQ expression and emoji picker
-
-``` html
 <template>
   <div class="hello">
     <emoji-pick
@@ -21,6 +16,7 @@ Simple Vue.js QQ expression and emoji picker
 
 <script>
 export default {
+  name: 'HelloWorld',
   data(){
     return {
       input: ''
@@ -33,5 +29,12 @@ export default {
   }
 }
 </script>
-```
 
+<style scoped>
+.hello{
+  display: inline-block;
+}
+.emojibutton{
+  display: inline-block;
+}
+</style>

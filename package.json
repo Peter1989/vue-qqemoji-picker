@@ -1,63 +1,48 @@
 {
   "name": "vue-qqemoji-picker",
-  "description": "Simple Vue.js qq expression and emoji picker with unicode characters",
-  "version": "1.0.8",
-  "main": "dist-module/main.js",
+  "version": "2.0.8",
+  "private": false,
+  "main": "lib/emoji-pick.umd.min.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
-  },
-  "browserify": {
-    "transform": [
-      "babelify",
-      "vueify"
-    ]
-  },
-  "browser": {
-    "vue": "vue/dist/vue.common.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "prepublish": "vue-cli-service build --target lib --name emoji-pick --dest lib packages/emoji-pick/src/index.js"
   },
   "repository": {
-    "url": "git+https://github.com/dongyang1989/vue-qqemoji-picker.git",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/Peter1989/vue-qqemoji-picker"
   },
-  "keywords": [],
-  "author": "dongyang1989",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dongyang1989/vue-qqemoji-picker/issues"
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11"
   },
-  "homepage": "https://github.com/dongyang1989/vue-qqemoji-picker#readme",
-  "typings": "src/@types",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-plugin-transform-runtime": "^6.0.0",
-    "babel-preset-env": "^1.5.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.0.0",
-    "babel-runtime": "^6.0.0",
-    "babelify": "^7.2.0",
-    "browserify": "^14.4.0",
-    "browserify-hmr": "^0.3.1",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "envify": "^3.4.1",
-    "file-loader": "^0.9.0",
-    "http-server": "^0.11.1",
-    "node-sass": "^4.5.0",
-    "npm-run-all": "^2.3.0",
-    "phantomjs-prebuilt": "^2.1.3",
-    "proxyquireify": "^3.0.1",
-    "sass-loader": "^5.0.1",
-    "uglify-js": "^2.5.0",
-    "vue-loader": "^12.1.0",
-    "vue-template-compiler": "^2.6.7",
-    "vueify": "^9.4.1",
-    "watchify": "^3.11.1",
-    "webpack": "^2.6.1",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.2.0"
-  }
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-eslint": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
